@@ -3,23 +3,18 @@
  * @return {number}
  */
 var findGCD = function(nums) {
-    max =nums[0];
-    min = nums[0]
-    for(i=0; i<nums.length;i++){
-       if(nums[i]>max){
-        max = nums[i]
-       }if(nums[i]<min){
-        min=nums[i]
-       }
+    const minNum = Math.min(...nums);
+    const maxNum = Math.max(...nums);
 
+    // helper function for gcd (Euclidean algorithm)
+    function gcd(a, b) {
+        while (b !== 0) {
+            let temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
     }
-     max1=1
-    for(j=0;j<=max;j++){
-       
-       if(min%j==0&&max%j==0){
-        max1=Math.max(max1,j)
-       }
-       
-    }
-    return max1
+
+    return gcd(minNum, maxNum);
 };
