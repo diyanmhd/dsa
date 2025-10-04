@@ -4,18 +4,17 @@
  */
 var countEven = function(num) {
     let count=0;
-    
     for(let i=1;i<=num;i++){
-        let sum=0
-        let str=i.toString()
-        for(let j =0;j<str.length;j++){
-            sum+=Number(str[j])
+      let sum=i.toString()
+        let str=0;
+        for(let ah of sum){
+            str+=Number(ah)
         }
-        if(sum%2==0){
+        if(str%2==0){
             count++
         }
-     
+    
     }
-       return count
-};
+            return count
 
+};
